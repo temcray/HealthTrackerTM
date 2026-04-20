@@ -8,14 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var viewModel: HealthViewModel = HealthViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            ScrollView{
+                VStack(spacing: 20){
+                    HeaderSectionView()
+                    StepCardView(steps: viewModel.steps)
+                    DistanceCardView(distance: viewModel.distance)
+                    ActivityStatusCard(activityStatus: viewModel.activityStatus, authStatus: viewModel.authStatus,
+                                       isAuthorized:viewModel.isAuthorized)
+                    
+                    Spacer()
+                }
+                .padding()
+            }.navigationTitle(Text("Health Tracker"))
+                .onAppear{
+                    viewModel.requestAuth()
+                }
+                .refreshable{
+                    viewModel.fetchTodaySteps()
+                    viewModel.fetchTodayDistance()
+                }
         }
-        .padding()
     }
 }
 
