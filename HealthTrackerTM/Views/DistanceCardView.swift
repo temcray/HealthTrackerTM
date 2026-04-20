@@ -18,7 +18,7 @@ struct DistanceCardView: View {
             HStack{
                 Image(systemName: "map.circle.fill")
                     .font(.system(size: 33))
-                    .foregroundColor(.blue)
+                    .foregroundColor(.red)
                 
                 
                 Text("Distance")

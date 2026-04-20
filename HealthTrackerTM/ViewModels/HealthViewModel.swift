@@ -110,7 +110,7 @@ class HealthViewModel: ObservableObject {
     }
     
     func fetchTodayDistance(){
-        guard let stepCountTpye = HKObjectType.quantityType(forIdentifier: .stepCount) else {
+        guard let distanceType = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning) else {
             print("No distance")
             return
             

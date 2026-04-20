@@ -18,7 +18,7 @@ struct StepCardView: View {
                    HStack{
                        Image(systemName: "figure.walk.circle.fill")
                            .font(.title2)
-                           .foregroundColor(Color.green)
+                           .foregroundColor(Color.red)
                        
                        Text("Steps Today").font(.headline)
                        
@@ -36,7 +36,7 @@ struct StepCardView: View {
                    }
                    
                    ProgressView(value: Double(steps), total:Double(goal))
-                       .tint(.green)
+                       .tint(.red)
                    
                    Text("Goal \(goal.formatted()) steps")
                        .font(.caption)

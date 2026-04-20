@@ -13,7 +13,7 @@ struct HeaderSectionView: View {
         VStack(spacing:10){
             Image(systemName: "figure.walk")
                 .font(.system(size: 80))
-                .foregroundColor(Color.blue)
+                .foregroundColor(Color.red)
             
             Text("Daily Activity Tracker")
                 .font(.title2)
@@ -21,7 +21,7 @@ struct HeaderSectionView: View {
             
             Text("Monitor Health Data")
                 .font(.subheadline)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color.red)
         }
         
         .padding()
